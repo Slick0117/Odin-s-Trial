@@ -152,7 +152,7 @@ public class Fenrirs_Brain : MonoBehaviour
                     {
                         state = "kill";
                         player.GetComponent<PlayerBlah>().alive = false;
-                        player.GetComponent<PlayerBlah>().enabled = false;
+                        // ***DISABLE PLAYER CONTROLLER*** // player.GetComponent<PlayerBlah>().enabled = false;
                         deathCam.SetActive(true);
                         deathCam.transform.position = Camera.main.transform.position;
                         deathCam.transform.rotation = Camera.main.transform.rotation;
