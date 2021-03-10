@@ -41,7 +41,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1356572253251654}
   serializedVersion: 6
-  lengthInSec: 50
+  lengthInSec: 10
   simulationSpeed: 1
   stopAction: 3
   cullingMode: 1
@@ -4622,6 +4622,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c375b2e22d7b5154c9bf8c56984ec628, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Inventory: {fileID: 0}
+  fire: {fileID: 0}
+  fireisOn: 0
+  safeLight: {fileID: 0}
+  noWood: {fileID: 0}
+  player: {fileID: 0}
+  playerInteracted: 0
 --- !u!1 &1884335439587730
 GameObject:
   m_ObjectHideFlags: 0
@@ -4725,7 +4732,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1930712502477930}
   serializedVersion: 6
-  lengthInSec: 50
+  lengthInSec: 10
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 1
