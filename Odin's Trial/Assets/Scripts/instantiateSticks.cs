@@ -6,23 +6,35 @@ using UnityEngine;
 public class instantiateSticks : MonoBehaviour
 {
     public GameObject Prefab;
-    private int minxrange = 300;
-    private int maxxrange = 700;
-
-    private List<Transform> _instances = new List<Transform>();
+    private float interval = 0.1f;
+    public int woodCount;
+    public int maxwoodCount;
     // Start is called before the first frame update
     void Start()
     {
+        woodCount = 0;
 
+       if (maxwoodCount <= 0) return; 
+
+        InvokeRepeating("generateSticks", 0f, interval);
     }
 
     // Update is called once per frame
     void Update()
     {
-        for (int i = 0; i < 10; i++)
-        {
-            GameObject wood = Instantiate(Prefab, new Vector3(transform.position.x + 1, 0, transform.position.z + 1)) as GameObject;
+        
+    }
+
+    void generateSticks()
+    {
+
+
+            GameObject wood = Instantiate(Prefab, new Vector3(UnityEngine.Random.Range(0.0f, 1000.0f), 0.01f, UnityEngine.Random.Range(0.0f, 1000.0f)), Quaternion.identity) as GameObject;
             wood.transform.parent = transform;
-        }
+             woodCount++;
+
+        if (woodCount >= maxwoodCount) 
+        { CancelInvoke(); }
+
     }
 }
