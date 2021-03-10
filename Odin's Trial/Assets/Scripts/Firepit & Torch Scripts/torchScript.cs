@@ -6,6 +6,7 @@ public class torchScript : MonoBehaviour
 {
     public ParticleSystem fire;
     public playerInteract player;
+    public bool istorchLit;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,21 +19,42 @@ public class torchScript : MonoBehaviour
     void Update()
     {
         lightFire();
+        isitLit();
     }
 
     void lightFire() 
     {
 
-        if (Input.GetKeyDown(KeyCode.F) && player.playeriswithDistance == true) 
+        if (Input.GetKeyDown(KeyCode.F) && player.playeriswithDistance == true)
         {
 
 
             Debug.Log("Light em up");
             fire.Play();
+          
+        }
+      
+    
+    
+    }
+
+    void isitLit() 
+    
+    {
+
+        if (fire.isPlaying)
+        {
+
+            istorchLit = true;
 
 
         }
-    
+        else 
+        {
+
+            istorchLit = false;
+        
+        }
     
     }
 

@@ -1117,7 +1117,7 @@ GameObject:
   - component: {fileID: 1322639291}
   - component: {fileID: 1322639293}
   m_Layer: 0
-  m_Name: Point Light (1)
+  m_Name: torchlight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1134,8 +1134,8 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 0.6320754, g: 0.19316398, b: 0.03875936, a: 1}
-  m_Intensity: 16
+  m_Color: {r: 0.8301887, g: 0.4264533, b: 0.28586686, a: 1}
+  m_Intensity: 9.82
   m_Range: 4.5
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -1210,6 +1210,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78f83e5dfb44a9b4d95e4b656991ed09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  torch: {fileID: 1765376727}
 --- !u!1 &1354441916
 GameObject:
   m_ObjectHideFlags: 0
@@ -1376,6 +1377,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4851091837577842, guid: 7d80390e93c214965b06f4e86d9b8c23, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198042609306743560, guid: 7d80390e93c214965b06f4e86d9b8c23,
+        type: 3}
+      propertyPath: LightsModule.light
+      value: 
+      objectReference: {fileID: 1322639291}
+    - target: {fileID: 198042609306743560, guid: 7d80390e93c214965b06f4e86d9b8c23,
+        type: 3}
+      propertyPath: LightsModule.ratio
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198042609306743560, guid: 7d80390e93c214965b06f4e86d9b8c23,
+        type: 3}
+      propertyPath: LightsModule.enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 198397671090046716, guid: 7d80390e93c214965b06f4e86d9b8c23,
@@ -1568,6 +1584,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fire: {fileID: 1765376726}
   player: {fileID: 960570828}
+  istorchLit: 0
 --- !u!1001 &1913833219
 PrefabInstance:
   m_ObjectHideFlags: 0
