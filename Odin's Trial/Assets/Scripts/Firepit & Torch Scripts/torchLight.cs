@@ -6,6 +6,7 @@ public class torchLight : MonoBehaviour
 {
     Light lightsource;
     public torchScript torch;
+    public torchGlow glow;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,13 +25,21 @@ public class torchLight : MonoBehaviour
 
         if (torch.istorchLit == true)
         {
-
+            lightsource.range = 3.0f;
             lightsource.intensity = 16.0f;
 
 
         }
+        else if (torch.istorchLit == false && glow.isitGlowing == true)
+        {
 
-        if (torch.istorchLit == false)
+            lightsource.range = 2.0f;
+            lightsource.intensity = 8.0f;
+
+
+        }
+
+        else if (torch.istorchLit == false && glow.isitGlowing == false)
         {
 
 
