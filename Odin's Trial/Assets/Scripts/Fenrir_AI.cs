@@ -12,7 +12,8 @@ public class Fenrir_AI : MonoBehaviour
     public GameObject player;
     public AudioClip[] footsteps;
     public Transform eyes;
-    //public AudioSource growl;
+    public AudioSource Howl;
+    public AudioSource growl;
     public GameObject deathCam;
     public Transform camPos;
 
@@ -83,7 +84,7 @@ public class Fenrir_AI : MonoBehaviour
                         state = "chase";
                         nav.speed = 15f;
                         //anim.speed = 15f;
-                        //growl.Play();
+                        Howl.Play();
                     }
                 }
             }
@@ -179,8 +180,8 @@ public class Fenrir_AI : MonoBehaviour
                         deathCam.transform.position = Camera.main.transform.position;
                         deathCam.transform.rotation = Camera.main.transform.rotation;
                         Camera.main.gameObject.SetActive(false);
-                        //growl.pitch = 0.7f;
-                        //growl.Play();
+                        growl.pitch = 0.7f;
+                        Howl.Play();
                         Invoke("reset", 1f);
                     }
                 }
