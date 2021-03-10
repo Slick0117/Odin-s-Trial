@@ -492,7 +492,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 5f83b854172f9e645ad9cddeb8d77e7a,
         type: 3}
       propertyPath: m_Name
-      value: Wolf_FattooCreater
+      value: Fenrir
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f83b854172f9e645ad9cddeb8d77e7a, type: 3}
@@ -1777,7 +1777,7 @@ GameObject:
   - component: {fileID: 1871911079}
   - component: {fileID: 1871911078}
   - component: {fileID: 1871911077}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Eyes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1793,7 +1793,7 @@ Transform:
   m_GameObject: {fileID: 1871911075}
   m_LocalRotation: {x: -0.0010068075, y: 0.9949361, z: 0.10001747, w: 0.009880832}
   m_LocalPosition: {x: 0.2, y: 45.5, z: 22.6}
-  m_LocalScale: {x: 3.0982647, y: 3.0982647, z: -4.340804}
+  m_LocalScale: {x: 16.270227, y: 16.270227, z: -22.7953}
   m_Children: []
   m_Father: {fileID: 1254318768}
   m_RootOrder: 1
