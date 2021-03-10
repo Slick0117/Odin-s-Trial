@@ -34,7 +34,7 @@ public class Fenrirs_Brain : MonoBehaviour
 
     //*********************MAIN CODE*********************//
 
-    //START FN
+    //**START FN
     void Start()
     {
         //NAV: gets NavMesh component 
@@ -49,42 +49,58 @@ public class Fenrirs_Brain : MonoBehaviour
 
         //SOUND: gets sound component
         sound = GetComponent<AudioSource>();
+
+        //END FN
     }
 
 
-    //FOOTSTEPS FN
+
+    //**FOOTSTEPS FN
     public void Footsteps(int num)
     {
         //Allows for multiple footstep audio 
         //clips for all four feet
         sound.clip = footsteps[num];
         sound.Play();
+        //END FN
     }
+    
 
 
-    //CHECKSIGHT FN
+    //**CHECKSIGHT FN
     public void CheckSight()
     {
         //Checks if the player is in view and changes state accordingly
-        if (active) {
+        if (active)
+        {
             RaycastHit rayHit;
-            if (Physics.Linecast(eyes.position, player.transform.position, out rayHit)) {
-                if(rayHit.collider.gameObject.name == "Player") {
-                    if (state != "kill") {
+            if (Physics.Linecast(eyes.position, player.transform.position, out rayHit))
+            {
+                if (rayHit.collider.gameObject.name == "Player")
+                {
+                    if (state != "kill")
+                    {
                         state = "Chase";
                         nav.speed = 15f;
                         anim.speed = 15f;
-                        growl.Play(); } } } } }
+                        growl.Play();
+                    }
+                }
+            }
+        }
+        //END FN
+    }
 
 
-    //UPDATE FN
+
+    //**UPDATE FN
     void Update()
     {
         if (active)
         {
             anim.SetFloat("Velocity", nav.velocity.magnitude);
 
-
+            //*******************************************************//
             //IDLE STATE: Allows Fenrir to wander around while "idle"
             if (state == "idle")
             {
@@ -107,8 +123,10 @@ public class Fenrirs_Brain : MonoBehaviour
                 nav.SetDestination(navHit.position);
                 state = "walk";
             }
+            //*******************************************************//
 
 
+            //*******************************//
             //WALK STATE: Fenrir walks around
             if (state == "walk")
             {
@@ -119,8 +137,10 @@ public class Fenrirs_Brain : MonoBehaviour
                     wait = 5f;
                 }
             }
+            //*******************************//
 
 
+            //***************************************//
             //SEARCH STATE: Fenrir searches for player
             if (state == "search")
             {
@@ -134,8 +154,10 @@ public class Fenrirs_Brain : MonoBehaviour
                     state = "idle";
                 }
             }
+            //***************************************//
 
 
+            //***********************************//
             //CHASE STATE: Fenrir chases player
             if (state == "chase")
             {
@@ -163,8 +185,10 @@ public class Fenrirs_Brain : MonoBehaviour
                     }
                 }
             }
-            
-            
+            //***********************************//
+
+
+            //********************************//
             //HUNT STATE: Fenrir hunts player
             if (state == "hunt")
             {
@@ -177,25 +201,33 @@ public class Fenrirs_Brain : MonoBehaviour
                     CheckSight();
                 }
             }
+            //********************************//
 
 
+            //********************************//
             //KILL STATE: Fenrir kills player
             if (state == "kill")
-            {
-                deathCam.transform.position = Vector3.Slerp(deathCam.transform.position, camPos.position, 10f * Time.deltaTime);
-                deathCam.transform.rotation = Quaternion.Slerp(deathCam.transform.rotation, camPos.rotation, 10f * Time.deltaTime);
-                anim.speed = 1f;
-                nav.SetDestination(deathCam.transform.position);
-            }
-
-
-
+                {
+                    deathCam.transform.position = Vector3.Slerp(deathCam.transform.position, camPos.position, 10f * Time.deltaTime);
+                    deathCam.transform.rotation = Quaternion.Slerp(deathCam.transform.rotation, camPos.rotation, 10f * Time.deltaTime);
+                    anim.speed = 1f;
+                    nav.SetDestination(deathCam.transform.position);
+                }
+            //********************************//
         }
+        //END FN
     }
 
+
+
+    //**RESET FN
     private void Reset()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        //END FN
     }
-    //***************************************************//
 }
+
+//***************************************************//
+//***************************************************//
+
