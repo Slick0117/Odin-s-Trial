@@ -15298,7 +15298,7 @@ Transform:
   m_GameObject: {fileID: 919132148690667203}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 504.54, y: 0.04, z: 527.72}
-  m_LocalScale: {x: 9.8535, y: 9.8535, z: 9.8535}
+  m_LocalScale: {x: 12.955382, y: 12.955382, z: 12.955382}
   m_Children:
   - {fileID: 4701413240264484289}
   - {fileID: 4309977512174088142}
@@ -16852,12 +16852,12 @@ GameObject:
   - component: {fileID: 4701413240264484289}
   - component: {fileID: 1105660661421950344}
   m_Layer: 0
-  m_Name: wolf_HP_MSh
+  m_Name: fluffy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8316538269518639178
 Transform:
   m_ObjectHideFlags: 0

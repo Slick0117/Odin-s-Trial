@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.039388753, g: 0.040807575, b: 0.041444436, a: 1}
+  m_IndirectSpecularColor: {r: 0.043578424, g: 0.044673763, b: 0.045165226, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -17185,12 +17185,12 @@ GameObject:
   - component: {fileID: 1358494295312802782}
   - component: {fileID: 6682367338465330071}
   m_Layer: 0
-  m_Name: wolf_HP_MSh
+  m_Name: Furry_bits
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &2494211216875059379
 GameObject:
   m_ObjectHideFlags: 0
@@ -17230,7 +17230,7 @@ SkinnedMeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2883909525107114579}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -17343,7 +17343,7 @@ GameObject:
   - component: {fileID: 7508780984658373073}
   - component: {fileID: 2819151351690971437}
   m_Layer: 0
-  m_Name: Wolf_LP_Msh
+  m_Name: Mid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18505,7 +18505,7 @@ GameObject:
   - component: {fileID: 7532846690882109906}
   - component: {fileID: 5134836843508217864}
   m_Layer: 0
-  m_Name: Wolf_SLP_Msh
+  m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
