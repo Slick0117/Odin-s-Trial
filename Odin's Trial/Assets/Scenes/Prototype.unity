@@ -929,7 +929,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Prefab: {fileID: 1330862079685384, guid: 7c1b7eb3905d5694688d9bb9fe2c0d47, type: 3}
   woodCount: 0
-  maxwoodCount: 100
+  maxwoodCount: 50
 --- !u!4 &134294798
 Transform:
   m_ObjectHideFlags: 0
@@ -7243,6 +7243,16 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0.73
       objectReference: {fileID: 0}
+    - target: {fileID: 6674626512247705427, guid: 11aaea5348574644a9eb4f4504fcce3f,
+        type: 3}
+      propertyPath: lengthInSec
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 6691863507625130663, guid: 11aaea5348574644a9eb4f4504fcce3f,
+        type: 3}
+      propertyPath: lengthInSec
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 6762068649558356325, guid: 11aaea5348574644a9eb4f4504fcce3f,
         type: 3}
       propertyPath: player
@@ -10205,6 +10215,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 198452739859148198, guid: e9f2a9282f97341eebd8d22dc0382920,
         type: 3}
+      propertyPath: lengthInSec
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 198452739859148198, guid: e9f2a9282f97341eebd8d22dc0382920,
+        type: 3}
       propertyPath: EmissionModule.rateOverTime.minMaxState
       value: 1
       objectReference: {fileID: 0}
@@ -10301,7 +10316,7 @@ PrefabInstance:
     - target: {fileID: 198864527378007956, guid: e9f2a9282f97341eebd8d22dc0382920,
         type: 3}
       propertyPath: lengthInSec
-      value: 15
+      value: 40
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7551749314742537832, guid: e9f2a9282f97341eebd8d22dc0382920, type: 3}
