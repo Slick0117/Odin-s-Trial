@@ -29,7 +29,7 @@ public class instantiateSticks : MonoBehaviour
     {
 
 
-            GameObject wood = Instantiate(Prefab, new Vector3(UnityEngine.Random.Range(0.0f, 1000.0f), 0.01f, UnityEngine.Random.Range(0.0f, 1000.0f)), Quaternion.identity) as GameObject;
+            GameObject wood = Instantiate(Prefab, new Vector3(UnityEngine.Random.Range(390.0f, 587.0f), 0.30f, UnityEngine.Random.Range(418.4f, 646.0f)), Quaternion.identity) as GameObject;
             wood.transform.parent = transform;
              woodCount++;
 
