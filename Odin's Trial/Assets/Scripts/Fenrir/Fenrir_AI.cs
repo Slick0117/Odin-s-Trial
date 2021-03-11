@@ -11,16 +11,16 @@ public class Fenrir_AI : MonoBehaviour
     //public VAR
     public GameObject player;
     public AudioClip[] footsteps;
-    public Transform eyes;
-    //public AudioSource howl;
-    //public AudioSource growl;
+    public Transform Eyes;
+    public AudioSource growl;
     public GameObject deathCam;
     public Transform camPos;
+    public Animator anim;
+    //public MeshRenderer mesh;
 
     //private VAR
     private NavMeshAgent nav;
-    //private AudioSource sound;
-    //private Animator anim;
+    private AudioSource sound;
 
     private float wait = 0f;
 
@@ -41,15 +41,17 @@ public class Fenrir_AI : MonoBehaviour
         //NAV: gets NavMesh component 
         //allows for adjustable speed
         nav = GetComponent<NavMeshAgent>();
-        nav.speed = 10f;
+        nav.speed = 5f;
 
         //ANIM: gets animator component 
         //allows for adjustable animation speed
-        //anim = GetComponent<Animator>();
-        //anim.speed = 10f;
+        anim = GetComponent<Animator>();
 
         //SOUND: gets sound component
-        //sound = GetComponent<AudioSource>();
+        sound = GetComponent<AudioSource>();
+
+        //SOUND: gets sound component
+        //mesh = GetComponent<MeshRenderer>();
 
         //END FN
     }
@@ -61,8 +63,8 @@ public class Fenrir_AI : MonoBehaviour
     {
         //Allows for multiple footstep audio 
         //clips for all four feet
-        //sound.clip = footsteps[num];
-        //sound.Play();
+        sound.clip = footsteps[num];
+        sound.Play();
         //END FN
     }
 
@@ -75,7 +77,7 @@ public class Fenrir_AI : MonoBehaviour
         if (active)
         {
             RaycastHit rayHit;
-            if (Physics.Linecast(eyes.position, player.transform.position, out rayHit))
+            if (Physics.Linecast(Eyes.position, player.transform.position, out rayHit))
             {
                 if (rayHit.collider.gameObject.name == "Player")
                 {
@@ -83,8 +85,8 @@ public class Fenrir_AI : MonoBehaviour
                     {
                         state = "chase";
                         nav.speed = 15f;
-                        //anim.speed = 15f;
-                        //howl.Play();
+                        anim.speed = 1f;
+                        growl.Play();
                     }
                 }
             }
@@ -99,7 +101,7 @@ public class Fenrir_AI : MonoBehaviour
     {
         if (active)
         {
-            //anim.SetFloat("velocity", nav.velocity.magnitude);
+            anim.SetFloat("velocity", nav.velocity.magnitude);
 
             //*******************************************************//
             //IDLE STATE: Allows Fenrir to wander around while "idle"
@@ -116,7 +118,6 @@ public class Fenrir_AI : MonoBehaviour
                     if (alertness > 20f)
                     {
                         hightAlert = false;
-                        //anim.speed = 10f;
                         nav.speed = 10f;
                     }
                 }
@@ -148,7 +149,7 @@ public class Fenrir_AI : MonoBehaviour
                 if (wait > 0f)
                 {
                     wait -= Time.deltaTime;
-                    transform.Rotate(0f, 120f * Time.deltaTime, 0f);
+                    //transform.Rotate(0f, 120f * Time.deltaTime, 0f);
                 }
                 else
                 {
@@ -175,14 +176,12 @@ public class Fenrir_AI : MonoBehaviour
                     {
                         state = "kill";
                         player.GetComponent<Player_Alive>().alive = false;
-                        // ***DISABLE PLAYER CONTROLLER*** // player.GetComponent<PlayerBlah>().enabled = false;
                         deathCam.SetActive(true);
                         deathCam.transform.position = Camera.main.transform.position;
                         deathCam.transform.rotation = Camera.main.transform.rotation;
                         Camera.main.gameObject.SetActive(false);
-                        //growl.pitch = 0.7f;
-                        //howl.Play();
-                        Invoke("reset", 1f);
+                        growl.pitch = 0.7f;
+                        Reset();
                     }
                 }
             }
@@ -211,7 +210,7 @@ public class Fenrir_AI : MonoBehaviour
             {
                 deathCam.transform.position = Vector3.Slerp(deathCam.transform.position, camPos.position, 10f * Time.deltaTime);
                 deathCam.transform.rotation = Quaternion.Slerp(deathCam.transform.rotation, camPos.rotation, 10f * Time.deltaTime);
-                //anim.speed = 1f;
+                anim.speed = 1f;
                 nav.SetDestination(deathCam.transform.position);
             }
             //********************************//
@@ -224,7 +223,7 @@ public class Fenrir_AI : MonoBehaviour
     //**RESET FN
     private void Reset()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene("TitleScreen");
         //END FN
     }
 }
