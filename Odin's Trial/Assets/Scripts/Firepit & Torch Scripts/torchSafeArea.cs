@@ -15,7 +15,7 @@ public class torchSafeArea : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        turnoffSafeArea();
     }
 
 
