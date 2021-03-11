@@ -11,7 +11,7 @@ public class Fenrir_AI : MonoBehaviour
     //public VAR
     public GameObject player;
     public AudioClip[] footsteps;
-    public Transform eyes;
+    public Transform Eyes;
     public AudioSource growl;
     public GameObject deathCam;
     public Transform camPos;
@@ -46,7 +46,6 @@ public class Fenrir_AI : MonoBehaviour
         //ANIM: gets animator component 
         //allows for adjustable animation speed
         anim = GetComponent<Animator>();
-        anim.speed = 1f;
 
         //SOUND: gets sound component
         sound = GetComponent<AudioSource>();
@@ -78,7 +77,7 @@ public class Fenrir_AI : MonoBehaviour
         if (active)
         {
             RaycastHit rayHit;
-            if (Physics.Linecast(eyes.position, player.transform.position, out rayHit))
+            if (Physics.Linecast(Eyes.position, player.transform.position, out rayHit))
             {
                 if (rayHit.collider.gameObject.name == "Player")
                 {
@@ -119,7 +118,6 @@ public class Fenrir_AI : MonoBehaviour
                     if (alertness > 20f)
                     {
                         hightAlert = false;
-                        anim.speed = 1f;
                         nav.speed = 10f;
                     }
                 }
@@ -183,7 +181,7 @@ public class Fenrir_AI : MonoBehaviour
                         deathCam.transform.rotation = Camera.main.transform.rotation;
                         Camera.main.gameObject.SetActive(false);
                         growl.pitch = 0.7f;
-                        Invoke("Reset", 1f);
+                        Reset();
                     }
                 }
             }
