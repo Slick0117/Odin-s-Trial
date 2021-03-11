@@ -7,7 +7,7 @@ public class Jump : MonoBehaviour
     Rigidbody rigidbody;
     public float jumpStrength = 2;
     public event System.Action Jumped;
-
+    AudioSource footStepAudio;
 
     void Reset()
     {
@@ -19,6 +19,7 @@ public class Jump : MonoBehaviour
     void Awake()
     {
         rigidbody = GetComponent<Rigidbody>();
+        footStepAudio = GetComponent<AudioSource>();
     }
 
     void LateUpdate()
@@ -27,6 +28,20 @@ public class Jump : MonoBehaviour
         {
             rigidbody.AddForce(Vector3.up * 100 * jumpStrength);
             Jumped?.Invoke();
+        }
+    }
+
+    void Update()
+    {
+        if (Input.GetButtonDown("Horizontal") || Input.GetButtonDown("Vertical") && groundCheck.isGrounded && !footStepAudio.isPlaying)
+        {
+            footStepAudio.volume = Random.Range(0.8f, 1);
+            footStepAudio.pitch = Random.Range(0.8f, 1.1f);
+            footStepAudio.Play();
+        }
+        else if(!Input.GetButton("Horizontal") && !Input.GetButton("Vertical") || !groundCheck.isGrounded && footStepAudio.isPlaying)
+        {
+            footStepAudio.Pause();
         }
     }
 }
