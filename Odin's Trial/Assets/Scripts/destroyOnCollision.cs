@@ -18,7 +18,7 @@ public class destroyOnCollision : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "player") 
+        if (collision.gameObject.tag == "Player") 
         {
 
             Destroy(gameObject);

@@ -26,7 +26,7 @@ public class playerInventory : MonoBehaviour
         if (collision.gameObject.tag == "wood")
         {
             Debug.Log("Hit Wood");
-            woodCount = +1;
+            woodCount = woodCount + 1;
 
         }
     }
@@ -36,7 +36,7 @@ public class playerInventory : MonoBehaviour
         if (fire.playerInteracted == true)
         {
 
-            woodCount = -1;
+            woodCount = woodCount - 1;
 
 
         }
