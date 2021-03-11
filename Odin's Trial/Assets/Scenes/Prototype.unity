@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.043578424, g: 0.044673763, b: 0.045165226, a: 1}
+  m_IndirectSpecularColor: {r: 0.039388753, g: 0.040807575, b: 0.041444436, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1227,7 +1227,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -1785,7 +1785,7 @@ RectTransform:
   - {fileID: 674342064}
   - {fileID: 42650459}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -8056,7 +8056,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1138390089}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.02, y: 0.541, z: -0.09}
+  m_LocalPosition: {x: 0.02, y: 0, z: -0.09}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1521399920}
@@ -9338,6 +9338,26 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1300746803}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1321580318 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 2a89aea289da17c4c8f7580276c18803,
+    type: 3}
+  m_PrefabInstance: {fileID: 1364532189}
+  m_PrefabAsset: {fileID: 0}
+--- !u!136 &1321580319
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1321580318}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.23894054
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: -0.0044072173}
 --- !u!1001 &1326926862
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11217,7 +11237,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1521399920}
   - component: {fileID: 1521399919}
-  - component: {fileID: 1521399918}
   m_Layer: 0
   m_Name: Firepit
   m_TagString: Untagged
@@ -11225,20 +11244,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!136 &1521399918
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1521399917}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.24169922
-  m_Height: 1
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0.036132812}
 --- !u!54 &1521399919
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -11271,7 +11276,6 @@ Transform:
   - {fileID: 1771760286}
   - {fileID: 1138390091}
   - {fileID: 652521006}
-  - {fileID: 422142450}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
