@@ -18,7 +18,7 @@ public class destroyOnCollision : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (Input.GetKeyDown(KeyCode.E) && collision.gameObject.tag == "Player") 
+        if (collision.gameObject.tag == "Player") 
         {
 
             Destroy(gameObject);

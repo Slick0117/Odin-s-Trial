@@ -24,7 +24,7 @@ public class torchGlow : MonoBehaviour
     void playParticles() 
     {
 
-        if (Input.GetKeyDown(KeyCode.F) && player.playeriswithDistance == true)
+        if (Input.GetKeyDown(KeyCode.E) && player.playeriswithDistance == true)
         {
 
 

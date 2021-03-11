@@ -23,7 +23,7 @@ public class playerInventory : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (Input.GetKeyDown(KeyCode.E) && collision.gameObject.tag == "wood")
+        if (collision.gameObject.tag == "wood")
         {
             Debug.Log("Hit Wood");
             woodCount = woodCount + 1;

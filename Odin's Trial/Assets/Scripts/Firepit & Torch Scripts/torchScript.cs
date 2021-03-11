@@ -25,7 +25,7 @@ public class torchScript : MonoBehaviour
     void lightFire() 
     {
 
-        if (Input.GetKeyDown(KeyCode.F) && player.playeriswithDistance == true)
+        if (Input.GetKeyDown(KeyCode.E) && player.playeriswithDistance == true)
         {
 
 
