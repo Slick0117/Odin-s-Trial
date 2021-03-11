@@ -34,6 +34,7 @@ public class fireLife : MonoBehaviour
         turnoffLight();
         startFire();
 
+        checkifFireisOn();
     }
 
     void turnoffLight()
@@ -62,7 +63,6 @@ public class fireLife : MonoBehaviour
         {
 
             fire.Play();
-            fireisOn = true;
             playerInteracted = true;
 
         }
@@ -106,6 +106,27 @@ public class fireLife : MonoBehaviour
 
 
 
+    }
+
+    void checkifFireisOn() 
+    {
+
+        if (fire.isPlaying)
+        {
+
+            fireisOn = true;
+        
+        }
+
+        if (fire.isStopped) 
+        {
+
+
+            fireisOn = false;
+        
+        }
+    
+    
     }
 
 }
