@@ -214,9 +214,10 @@ public class Fenrir_AI : MonoBehaviour
             //KILL STATE: Fenrir kills player
             if (state == "kill")
             {
+                anim.SetTrigger("chomp");
                 deathCam.transform.position = Vector3.Slerp(deathCam.transform.position, camPos.position, 10f * Time.deltaTime);
                 deathCam.transform.rotation = Quaternion.Slerp(deathCam.transform.rotation, camPos.rotation, 10f * Time.deltaTime);
-                anim.speed = 1f;
+                anim.speed = 0.5f;
                 nav.SetDestination(deathCam.transform.position);
             }
             //********************************//
