@@ -7825,13 +7825,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6674626512247705427, guid: 11aaea5348574644a9eb4f4504fcce3f,
         type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6674626512247705427, guid: 11aaea5348574644a9eb4f4504fcce3f,
+        type: 3}
       propertyPath: lengthInSec
-      value: 40
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 6691863507625130663, guid: 11aaea5348574644a9eb4f4504fcce3f,
         type: 3}
       propertyPath: lengthInSec
-      value: 50
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 6762068649558356325, guid: 11aaea5348574644a9eb4f4504fcce3f,
         type: 3}
