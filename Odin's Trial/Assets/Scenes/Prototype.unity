@@ -10601,7 +10601,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 1444357128}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 0
+  m_Enabled: 1
   m_Radius: 3.1914978
   m_Height: 6.3829956
   m_Direction: 1
@@ -18203,10 +18203,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 479500416}
   footsteps:
-  - {fileID: 8300000, guid: 8fb5bc3bf5d8dd64292b344442212cfb, type: 3}
-  - {fileID: 8300000, guid: 8fb5bc3bf5d8dd64292b344442212cfb, type: 3}
-  - {fileID: 8300000, guid: 8fb5bc3bf5d8dd64292b344442212cfb, type: 3}
-  - {fileID: 8300000, guid: 8fb5bc3bf5d8dd64292b344442212cfb, type: 3}
+  - {fileID: 8300000, guid: 272288a637349174699f047a25ce3d11, type: 3}
+  - {fileID: 8300000, guid: 272288a637349174699f047a25ce3d11, type: 3}
+  - {fileID: 8300000, guid: 272288a637349174699f047a25ce3d11, type: 3}
+  - {fileID: 8300000, guid: 272288a637349174699f047a25ce3d11, type: 3}
   Eyes: {fileID: 1108179193}
   growl: {fileID: 6856159658186539235}
   deathCam: {fileID: 1415186291}

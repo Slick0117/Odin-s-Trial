@@ -26,7 +26,7 @@ public class Fenrir_AI : MonoBehaviour
 
     private string state = "idle";
     private bool active = true;
-    private bool hightAlert = false;
+    private bool highAlert = false;
     private float alertness = 20f;
 
     //***************************************************//
@@ -111,13 +111,13 @@ public class Fenrir_AI : MonoBehaviour
                 NavMeshHit navHit;
                 NavMesh.SamplePosition(transform.position + randomPos, out navHit, 20f, NavMesh.AllAreas);
 
-                if (hightAlert)
+                if (highAlert)
                 {
                     NavMesh.SamplePosition(player.transform.position + randomPos, out navHit, 20f, NavMesh.AllAreas);
                     alertness += 5f;
                     if (alertness > 20f)
                     {
-                        hightAlert = false;
+                        highAlert = false;
                         nav.speed = 10f;
                     }
                 }
@@ -163,26 +163,32 @@ public class Fenrir_AI : MonoBehaviour
             //CHASE STATE: Fenrir chases player
             if (state == "chase")
             {
-                nav.SetDestination(player.transform.position);
+                nav.destination = player.transform.position;
+
+                //lose sight of player//
                 float distance = Vector3.Distance(transform.position, player.transform.position);
-                if (distance > 5f)
+                if (distance > 10f)
                 {
                     state = "hunt";
                 }
-                //KILLS PLAYER IF CAUGHT
-                else if (nav.remainingDistance <= nav.stoppingDistance + 1 && !nav.pathPending)
+                //kill the player//
+                else if (nav.remainingDistance <= nav.stoppingDistance + 1f && !nav.pathPending)
                 {
                     if (player.GetComponent<Player_Alive>().alive)
                     {
                         state = "kill";
                         player.GetComponent<Player_Alive>().alive = false;
+                        player.GetComponent<FirstPersonMovement>().enabled = false;
                         deathCam.SetActive(true);
                         deathCam.transform.position = Camera.main.transform.position;
                         deathCam.transform.rotation = Camera.main.transform.rotation;
                         Camera.main.gameObject.SetActive(false);
                         growl.pitch = 0.7f;
-                        Reset();
+                        growl.Play();
+                        Invoke("reset", 1f);
                     }
+
+
                 }
             }
             //***********************************//
@@ -196,7 +202,7 @@ public class Fenrir_AI : MonoBehaviour
                 {
                     state = "search";
                     wait = 5f;
-                    hightAlert = true;
+                    highAlert = true;
                     alertness = 5f;
                     CheckSight();
                 }
@@ -221,7 +227,7 @@ public class Fenrir_AI : MonoBehaviour
 
 
     //**RESET FN
-    private void Reset()
+    void reset()
     {
         SceneManager.LoadScene("TitleScreen");
         //END FN
