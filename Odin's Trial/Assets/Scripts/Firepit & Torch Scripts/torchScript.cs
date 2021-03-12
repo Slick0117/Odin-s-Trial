@@ -7,14 +7,12 @@ public class torchScript : MonoBehaviour
     public ParticleSystem fire;
     public playerInteract player;
     public bool istorchLit;
-    public fireLife firepit;
-    public GameObject nofire;
     // Start is called before the first frame update
     void Start()
     {
         fire = GetComponent<ParticleSystem>();
         fire.Stop();
-        nofire.SetActive(false);
+        
     }
 
     // Update is called once per frame
@@ -27,7 +25,7 @@ public class torchScript : MonoBehaviour
     void lightFire() 
     {
 
-        if (Input.GetKeyDown(KeyCode.F) && player.playeriswithDistance == true && firepit.fireisOn == true)
+        if (Input.GetKeyDown(KeyCode.E) && player.playeriswithDistance == true)
         {
 
 
@@ -35,18 +33,9 @@ public class torchScript : MonoBehaviour
             fire.Play();
           
         }
-
-        if (Input.GetKeyDown(KeyCode.F) && player.playeriswithDistance == true && firepit.fireisOn == false)
-        {
-
-            nofire.SetActive(true);
-            removeText();
-
-
-        }
-
-
-
+      
+    
+    
     }
 
     void isitLit() 
@@ -67,18 +56,6 @@ public class torchScript : MonoBehaviour
         
         }
     
-    }
-
-    void removeText()
-    {
-
-        StartCoroutine(RemoveAfterSeconds(3, nofire));
-    }
-
-    IEnumerator RemoveAfterSeconds(int seconds, GameObject obj)
-    {
-        yield return new WaitForSeconds(seconds);
-        obj.SetActive(false);
     }
 
 }

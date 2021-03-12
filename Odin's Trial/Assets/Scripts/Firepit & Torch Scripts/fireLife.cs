@@ -13,7 +13,6 @@ public class fireLife : MonoBehaviour
     public GameObject noWood;
     public playerInteract player;
     public bool playerInteracted;
-    AudioSource fireAudio;
   
 
     // Start is called before the first frame update
@@ -22,7 +21,7 @@ public class fireLife : MonoBehaviour
 
         fire = GetComponent<ParticleSystem>();
         noWood.SetActive(false);
-        fireAudio = GetComponent<AudioSource>();
+
     
     }
 
@@ -35,7 +34,6 @@ public class fireLife : MonoBehaviour
         turnoffLight();
         startFire();
 
-        checkifFireisOn();
     }
 
     void turnoffLight()
@@ -62,10 +60,10 @@ public class fireLife : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.E) && playerHasWood == true && player.playeriswithDistance == true)
         {
-            fire.Stop();
+
             fire.Play();
+            fireisOn = true;
             playerInteracted = true;
-            fireAudio.Play();
 
         }
         else if (Input.GetKeyDown(KeyCode.E) && playerHasWood == false && player.playeriswithDistance == true)
@@ -74,8 +72,6 @@ public class fireLife : MonoBehaviour
             noWood.SetActive(true);
             removeText();
         }
-
-     
 
     }
 
@@ -110,28 +106,6 @@ public class fireLife : MonoBehaviour
 
 
 
-    }
-
-    void checkifFireisOn() 
-    {
-
-        if (fire.isPlaying)
-        {
-
-            fireisOn = true;
-        
-        }
-
-        if (fire.isStopped) 
-        {
-
-
-            fireisOn = false;
-            fireAudio.Pause();
-        
-        }
-    
-    
     }
 
 }

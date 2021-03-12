@@ -7,15 +7,11 @@ public class torchLight : MonoBehaviour
     Light lightsource;
     public torchScript torch;
     public torchGlow glow;
-    public bool isTorchON;
-    public GameObject prefab;
-
-
     // Start is called before the first frame update
     void Start()
     {
         lightsource = GetComponent<Light>();
-
+       
     }
 
     // Update is called once per frame
@@ -31,7 +27,6 @@ public class torchLight : MonoBehaviour
         {
             lightsource.range = 3.0f;
             lightsource.intensity = 16.0f;
-            isTorchON = true;
 
 
         }
@@ -40,7 +35,6 @@ public class torchLight : MonoBehaviour
 
             lightsource.range = 2.0f;
             lightsource.intensity = 8.0f;
-            isTorchON = true;
 
 
         }
@@ -50,15 +44,9 @@ public class torchLight : MonoBehaviour
 
 
             lightsource.intensity = 0.0f;
-            isTorchON = false;
-            Spawn();
-
+        
+        
         }
     
-    }
-
-    void Spawn()
-    {
-        Instantiate(prefab, transform.position, transform.rotation);
     }
 }

@@ -33,7 +33,7 @@ public class playerInventory : MonoBehaviour
 
     void removeWood()
     {
-        if (Input.GetKeyDown(KeyCode.E) && woodCount >= 1 && fire.playerInteracted == true)
+        if (fire.playerInteracted == true)
         {
 
             woodCount = woodCount - 1;

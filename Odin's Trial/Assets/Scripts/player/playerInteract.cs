@@ -5,7 +5,6 @@ using UnityEngine;
 public class playerInteract : MonoBehaviour
 {
     public bool playeriswithDistance = false;
-    public GameObject interactUI;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +14,7 @@ public class playerInteract : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        showUITEXT();
+        
     }
 
     private void OnTriggerEnter(Collider other)
@@ -32,26 +31,6 @@ public class playerInteract : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         playeriswithDistance = false;
-    }
-
-    void showUITEXT()
-    {
-
-        if (playeriswithDistance == true)
-        {
-
-            interactUI.SetActive(true);
-
-        }
-
-        else if (playeriswithDistance == false)
-        {
-
-
-            interactUI.SetActive(false);
-        }
-
-
     }
 
 }
