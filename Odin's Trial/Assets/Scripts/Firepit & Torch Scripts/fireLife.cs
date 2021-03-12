@@ -62,7 +62,7 @@ public class fireLife : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.E) && playerHasWood == true && player.playeriswithDistance == true)
         {
-
+            fire.Stop();
             fire.Play();
             playerInteracted = true;
             fireAudio.Play();
@@ -74,6 +74,8 @@ public class fireLife : MonoBehaviour
             noWood.SetActive(true);
             removeText();
         }
+
+     
 
     }
 
