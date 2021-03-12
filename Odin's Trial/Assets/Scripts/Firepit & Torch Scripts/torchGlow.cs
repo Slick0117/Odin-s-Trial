@@ -7,7 +7,6 @@ public class torchGlow : MonoBehaviour
     ParticleSystem glow;
    public playerInteract player;
    public  bool isitGlowing;
-    public fireLife firepit;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +24,7 @@ public class torchGlow : MonoBehaviour
     void playParticles() 
     {
 
-        if (Input.GetKeyDown(KeyCode.F) && player.playeriswithDistance == true && firepit.fireisOn == true)
+        if (Input.GetKeyDown(KeyCode.E) && player.playeriswithDistance == true)
         {
 
 
